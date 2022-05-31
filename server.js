@@ -8,7 +8,7 @@ const cors = require("cors");
 const port = process.env.PORT || 5000;
 
 const auth = require('./routes/auth');
-
+const users = require('./routes/users');
 connectDB();
 
 const app = express();
@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v1/auth',auth);
+app.use('/api/v1/users',users);
 app.use('*',endPointNotFound);
 
 

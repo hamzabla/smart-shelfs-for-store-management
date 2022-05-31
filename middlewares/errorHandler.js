@@ -14,6 +14,9 @@ let errorHandler = async (req,res,next)=>{
     if(errorCode === 'invalid user creds'){
         errorMsg = "invalid user creds!!";
     }
+    if(errorCode === 'user not exist'){
+        errorMsg = "User doesn't exist!!";
+    }
     res.status(400).json({success:false,error:errorMsg});
 
 }
