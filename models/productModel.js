@@ -39,6 +39,7 @@ const productSchema = mongoose.Schema(
         type: String,
         default: "IN"
     }
+
   },
   {
     toJSON:{

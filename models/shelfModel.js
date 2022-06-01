@@ -2,15 +2,23 @@ const mongoose = require("mongoose");
 
 const shelfSchema = mongoose.Schema(
     {
-        productCapacity:{
+        shelfCapacity:{
             type: Number,
             required: true,
-            
         },
         state:{
             type: String,
             required: true,
+        },
+        product: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+        },
+        inShelfNumber:{
+            type: Number,
+            required: true,
         }
+        
     },
     { timestamps: true }
 );

@@ -29,6 +29,9 @@ let errorHandler = async (req,res,next)=>{
     if(errorCode === 'product not exist'){
         errorMsg = "product not exist";
     }
+    if(errorCode === 'shelf not exist'){
+        errorMsg = "shelf not exist";
+    }
     res.status(400).json({success:false,error:errorMsg});
 
 }
