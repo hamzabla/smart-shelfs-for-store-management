@@ -29,9 +29,9 @@ const userSchema = mongoose.Schema(
     telephone: {
       type: String,
       required: [true, "Please enter a phone number"],
-    },
-  
-  }
+    }
+  },
+  { timestamps: true }
   
 );
 

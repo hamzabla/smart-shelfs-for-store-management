@@ -17,6 +17,18 @@ let errorHandler = async (req,res,next)=>{
     if(errorCode === 'user not exist'){
         errorMsg = "User doesn't exist!!";
     }
+    if(errorCode === 'category already exist'){
+        errorMsg = "category already exist";
+    }
+    if(errorCode === 'category not exist'){
+        errorMsg = "category not exist";
+    }
+    if(errorCode === 'product already exist'){
+        errorMsg = "product already exist";
+    }
+    if(errorCode === 'product not exist'){
+        errorMsg = "product not exist";
+    }
     res.status(400).json({success:false,error:errorMsg});
 
 }
