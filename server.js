@@ -14,6 +14,7 @@ const products = require('./routes/products');
 const shelves = require('./routes/shelves');
 const rows = require('./routes/rows');
 const aisles = require('./routes/aisles');
+const reunion = require('./routes/reunion');
 connectDB();
 
 const app = express();
@@ -29,6 +30,7 @@ app.use('/api/v1/products',products);
 app.use('/api/v1/shelves',shelves);
 app.use('/api/v1/rows',rows);
 app.use('/api/v1/aisles',aisles);
+app.use('/api/v1/reunion',reunion);
 app.use('*',endPointNotFound);
 
 
