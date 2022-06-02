@@ -14,7 +14,8 @@ const register = asyncHandler(async (req, res, next) => {
     lastName,
     email,
     password,
-    telephone
+    telephone,
+    role
   } = req.body;
 
   if (
@@ -23,7 +24,8 @@ const register = asyncHandler(async (req, res, next) => {
     !password ||
     !telephone ||
     !firstName ||
-    !lastName
+    !lastName ||
+    !role
   ) {
    req.smartShelf = {errorCode: "missing required values"}
    next();
@@ -50,6 +52,7 @@ const register = asyncHandler(async (req, res, next) => {
       telephone,
       firstName,
       lastName,
+      role
     });
     if (user) {
       res.status(201).json({
@@ -59,6 +62,7 @@ const register = asyncHandler(async (req, res, next) => {
         _id: user.id,
         username: user.username,
         email: user.email,
+        role: user.role,
         token: generateToken(user._id),
     }
 });

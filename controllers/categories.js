@@ -7,7 +7,7 @@ const createCategory = async (req, res, next) => {
         categoryDescription
     } = req.body;
 
-    if (!categoryName || !categoryDescription) {
+    if (!categoryName ) {
         req.smartShelf = { errorCode: "missing required values" }
         next();
         return;
@@ -49,7 +49,7 @@ const updateCategory = async (req, res, next) => {
         categoryDescription
     } = req.body;
 
-    if (!categoryName && !categoryDescription) {
+    if (!categoryName ) {
         req.smartShelf = { errorCode: "missing required values" }
         next();
         return;

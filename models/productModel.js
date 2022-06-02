@@ -19,10 +19,10 @@ const productSchema = mongoose.Schema(
     //   type: mongoose.Schema.Types.ObjectId,
     //   ref: "Row"
     // },
-    // aisle: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "Aisle"
-    // },
+    aisle: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Aisle"
+    },
     productDescription: {
       type: String,
       required: false

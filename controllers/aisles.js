@@ -1,13 +1,13 @@
 const Aisle = require("../models/aisleModel");
 
-
 const createAisle = async (req, res, next) => {
     const {
+        _id,
         aisleCapacity,
-        rows
+        aisleName
     } = req.body;
 
-    if (!aisleCapacity || !rows) {
+    if (!_id || !aisleName || !aisleCapacity) {
         req.smartshelf = { errorCode: "missing required values" }
         next();
         return;
@@ -23,8 +23,9 @@ const createAisle = async (req, res, next) => {
 
     try {
         const aisle = await Aisle.create({
+            _id,
             aisleCapacity,
-            rows
+            aisleName
         });
         res.status(201).json({
             success: true,
@@ -45,19 +46,21 @@ const createAisle = async (req, res, next) => {
 const updateAisle = async (req, res, next) => {
     const {id}= req.params;
     const {
+        _id,
         aisleCapacity,
-        rows
+        aisleName
     } = req.body;
 
-    if  (!aisleCapacity || !rows) {
+    if  (!_id || !aisleName || !aisleCapacity ) {
         req.smartShelf = { errorCode: "missing required values" }
         next();
         return;
     }
     try{
         let aisle = await Aisle.findOneAndUpdate({ _id: id }, {
+            _id,
             aisleCapacity,
-            rows
+            aisleName
         },{ returnOriginal: false },);
     
         res.status(200).json(
