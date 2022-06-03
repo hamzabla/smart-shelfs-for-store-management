@@ -16,7 +16,7 @@ const shelfSchema = mongoose.Schema(
         },
         inShelfNumber:{
             type: Number,
-            required: true,
+            required: true
         }
         
     },
