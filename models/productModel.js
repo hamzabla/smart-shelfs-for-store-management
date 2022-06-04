@@ -28,7 +28,7 @@ const productSchema = mongoose.Schema(
       required: false
     },
     productPrice: {
-      type: Number,
+      type: String,
       required: [true, "Please enter the product price"]
     },
     productSKU: {
