@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const shelfSchema = mongoose.Schema(
     {
         shelfCapacity:{
-            type: Number,
+            type: String,
             required: true,
         },
         state:{
@@ -15,7 +15,7 @@ const shelfSchema = mongoose.Schema(
             required: true,
         },
         inShelfNumber:{
-            type: Number,
+            type: String,
             required: true
         }
         

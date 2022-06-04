@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
@@ -24,6 +25,8 @@
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.5",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
+    "node-fetch": "^3.2.5",
+    "nodemon": "^2.0.16",
+    "serialport": "^9.0.1"
   }
 }

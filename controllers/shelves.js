@@ -61,7 +61,7 @@ const updateShelf = async (req, res, next) => {
         return;
     }
     try{
-        let shelf = await shelf.findOneAndUpdate({ _id: id }, {
+        let shelf = await Shelf.findOneAndUpdate({ _id: id }, {
             shelfCapacity,
             state,
             product,
@@ -87,7 +87,7 @@ const updateShelf = async (req, res, next) => {
 
 const getShelfById = async (req, res, next) => {
     const { id } = req.params;
-    let shelf = await shelf.findById(id);
+    let shelf = await Shelf.findById(id);
     if (shelf) {
         res.status(200).json(
             {

@@ -116,13 +116,15 @@ const updateUser = asyncHandler(async (req, res, next) => {
     const {
         firstName,
         lastName,
-        telephone
+        telephone,
+        role
     } = req.body;
 
     if (
         !telephone ||
         !firstName ||
-        !lastName
+        !lastName ||
+        !role
     ) {
         req.smartShelf = { errorCode: "missing required values" }
         next();
@@ -132,7 +134,8 @@ const updateUser = asyncHandler(async (req, res, next) => {
     let user = await User.findOneAndUpdate({ _id: id }, {
         firstName,
         lastName,
-        telephone
+        telephone,
+        role
     },{ returnOriginal: false },);
 
     res.status(200).json(
